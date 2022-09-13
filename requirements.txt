@@ -1,5 +1,5 @@
 opencv-contrib-python-headless
 numpy
 Pillow
-streamlit==1.11.0
+streamlit
 streamlit-image-comparison
