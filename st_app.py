@@ -28,14 +28,8 @@ with st.expander("⭐ HIGHLIGHTS OF THE APP"):
 
                  """)
 
+st.file_uploader("UPLOAD AN IMAGE",key="FileUp")
 
-uploaded = st.file_uploader("UPLOAD AN IMAGE")
-
-def upload_img():
-    if uploaded is not None:
-        return Image.open(uploaded)
-    #else:
-        #st.write('Please')
 #########################################################################
 # FUNCTIONS FOR APPLYING VARIETY OF EFFECTS
 def pop_art(original):
@@ -125,10 +119,8 @@ def waterColor_style(original):
     return st.image(image_sharp)
 
 ##################################################################################
-# DISPLAYING RESULTS!
-display_image = upload_img()
 
-if st.button('See the Magic! 🎉'):
+if st.session_state.FileUp and st.button('See the Magic! 🎉'):
     tab1, tab2, tab3 = st.tabs(["CARTOON 😲", "POP ART 👀", "WATERCOLOR 🎨"])
     with tab1:
         st.write('### CARTOON STYLED IMAGE')
